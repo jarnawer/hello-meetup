@@ -1,0 +1,7 @@
+az login
+
+
+az group create --name examplegroup --location westeurope
+az group deployment create --resource-group examplegroup --template-file azuredeploy.json
+
+az group delete --name examplegroup
