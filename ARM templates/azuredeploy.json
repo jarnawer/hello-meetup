@@ -39,10 +39,10 @@
       "kind": "Storage",
       "location": "[resourceGroup().location]",
       "tags": {},
-      "properties": {
+      "properties": { 
         "encryption":{
           "services":{
-            "blob":{
+            "blob":{ 
               "enabled":true
             }
           },
