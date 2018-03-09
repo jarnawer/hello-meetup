@@ -70,10 +70,10 @@
       "location": "[resourceGroup().location]",
       "sku": {
         "name": "[parameters('sku')]",
-        "capacity": "[parameters('workerSize')]"
+        "capacity": "[parameters('workerSize')]",
       },
       "properties": {
-        "name": "[parameters('hostingPlanName')]"
+        "name": "[parameters('hostingPlanName')]",
       }
     },
     {
@@ -99,6 +99,17 @@
             "RepoUrl": "[parameters('repoURL')]",
             "branch": "[parameters('branch')]",
             "IsManualIntegration": false
+          }
+        },
+        {
+          "apiVersion": "2015-08-01",
+          "name": "web",
+          "type": "config",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
+          ],
+          "properties": {
+            "website_node_default_version":"8.9.4"
           }
         }
       ]
