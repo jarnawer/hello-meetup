@@ -1,9 +1,8 @@
-#Stage 1: Build with full framework
+#Stage 1: Build
 FROM microsoft/aspnetcore-build AS builder
 LABEL Name=hellomeetup Version=0.0.1
 WORKDIR /app
 
-EXPOSE 5000
 COPY ./angular/*.csproj ./
 RUN dotnet restore
 
@@ -16,7 +15,7 @@ RUN npm -v
 COPY ./angular .
 RUN dotnet publish --output /app/ --configuration Release
 
-#Stage 2:Copy and build with only its necessary dependencies (install nodejs)
+#Stage 2:Copy image from builder
 FROM microsoft/aspnetcore
 WORKDIR /app
 COPY --from=builder /app .
@@ -32,3 +31,4 @@ RUN curl -SL "$NODE_DOWNLOAD_URL" --output nodejs.tar.gz \
 ENTRYPOINT [ "dotnet", "angular.dll" ]
 
 
+ 

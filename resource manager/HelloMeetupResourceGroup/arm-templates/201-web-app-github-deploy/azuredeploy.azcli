@@ -1,0 +1,12 @@
+az login
+
+az group create --name HelloMeetupResourceGroup --location westeurope
+az group deployment create --resource-group HelloMeetupResourceGroup --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+
+ 
+
+
+
+
+
+

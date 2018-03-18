@@ -1,0 +1,9 @@
+az login
+
+az group create --name HelloMeetupResourceGroupContainer --location westeurope
+az group deployment create --resource-group HelloMeetupResourceGroupContainer --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+
+az acr credential show --name ACRmeetup 
+az webapp config container set --name HelloMeetupWebAppContainer --resource-group HelloMeetupResourceGroupContainer --docker-custom-image-name ACRmeetup.azurecr.io/helloworld:latest --docker-registry-server-url https://ACRmeetup.azurecr.io --docker-registry-server-user USER --docker-registry-server-password PASSWORD
+
+

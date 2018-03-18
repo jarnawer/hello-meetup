@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\resource manager",
+    "\\resource manager\\HelloMeetupResourceGroup",
+    "\\resource manager\\HelloMeetupResourceGroup\\arm-templates",
+    "\\resource manager\\HelloMeetupResourceGroup\\arm-templates\\101-container-registry",
+    "\\resource manager\\HelloMeetupResourceGroup\\arm-templates\\201-web-app-github-deploy"
+  ],
+  "SelectedNode": "\\resource manager\\HelloMeetupResourceGroup\\arm-templates\\101-container-registry\\azuredeploy.json",
+  "PreviewInSolutionExplorer": false
+}

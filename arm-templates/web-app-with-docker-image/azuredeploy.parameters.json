@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_HelloMeetupWebAppContainer2_name": {
+            "value": "HelloMeetupWebAppContainer"
+        },
+        "serverfarms_HelloMeetupWebAppContainerPlan2_name": {
+            "value": "HelloMeetupWebAppContainerPlan"
+        },
+        "config_web_name": {
+            "value": "web"
+        },
+        "hostNameBindings_hellomeetupwebappcontainer2.azurewebsites.net_name": {
+            "value": "hellomeetupwebappcontainer.azurewebsites.net"
+        }
+    }
+}

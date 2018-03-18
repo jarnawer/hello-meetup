@@ -1,0 +1,14 @@
+az login
+
+az group create --name HelloMeetupResourceGroup --location westeurope
+az group deployment create --resource-group HelloMeetupResourceGroup --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+
+az acr credential show --name ACRmeetup 
+docker login ACRmeetup.azurecr.io --username ACRmeetup --password +xyoRiJu1mTYES6J4k4xZsfJiBoEYwQF
+docker tag helloworld:latest ACRmeetup.azurecr.io/helloworld:latest
+docker push ACRmeetup.azurecr.io/helloworld:latest
+
+cd ../web-app-with-docker-image
+az group deployment create --resource-group HelloMeetupResourceGroup --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+
+
